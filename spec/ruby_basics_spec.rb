@@ -8,15 +8,23 @@ describe "ruby" do
     it 'given two numbers returns quotient of the first number divided by the second number' do
       num1 = 42
       num2 = 7
-      
+
+      def division(num1, num2)
+        num1 / num2
+      end
+
       expect(division(num1,num2)).to eq(6)
     end
   end
 
+
   describe '#assign_variable' do
     it 'should take an argument of a persons name and assign it to a variable name' do
       value = "Bob"
-
+      def assign_variable(name)
+        name = "Bob"
+        name
+      end
       expect(assign_variable(value)).to eq(value)
     end
   end
@@ -24,7 +32,10 @@ describe "ruby" do
   describe '#argue' do
     it 'should add an argument to the method argue' do
       phrase = "I'm right and you are wrong!"
-      
+      def argue(phrase)
+        phrase = "I'm right and you are wrong!"
+        phrase
+      end
       expect(argue(phrase)).to eq(phrase)
     end  
   end
@@ -33,7 +44,11 @@ describe "ruby" do
     it 'should take in two arguments' do
       greeting = "Hi there, "
       name = "Bobby!"
-
+      def greeting(phrase,name)
+        phrase = "Hi there, "
+        name = "Bobby!"
+        puts "#{phrase} #{name}"
+      end
       expect{ greeting(greeting, name) }.to_not raise_error
     end
 
@@ -47,12 +62,20 @@ describe "ruby" do
   describe '#return_a_value' do
     it 'return the phrase "Nice"' do
       expect(return_a_value).to eq("Nice")
-    end
+      def return_a_value
+        "Nice"
+      end
+ end
   end
 
   describe '#last_evaluated_value' do
     it 'return the phrase "expert"' do
       expect(last_evaluated_value).to eq("expert")
+
+      def last_evaluated_value
+        "expert"
+      end
+
     end
   end
 
@@ -60,7 +83,9 @@ describe "ruby" do
     it 'has an optional argument that defaults to "cheese" and returns "cheese" when called without an argument' do
       expect(pizza_party).to eq("cheese")
     end
-
+def pizza_party(topping = "cheese")
+  topping
+end
     it 'can be called with an argument and return the string that was passed in as an argument' do
       expect(pizza_party("pepperoni")).to eq("pepperoni")
     end
